@@ -3,7 +3,7 @@ import 'package:ui_tutorial/common/constants_color.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
-  final Function press;
+  final VoidCallback press;
   final Color color, textColor;
 
   const RoundedButton({
@@ -33,7 +33,7 @@ class RoundedButton extends StatelessWidget {
         text,
         style: TextStyle(color: textColor),
       ),
-      onPressed: press(),
+      onPressed: press,
       style: ElevatedButton.styleFrom(
         primary: color,
         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),

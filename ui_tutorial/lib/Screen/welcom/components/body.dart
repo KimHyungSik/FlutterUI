@@ -33,31 +33,31 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "LOGIN",
               press: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) {
-                //       return LoginScreen();
-                //     },
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return LoginScreen();
+                    },
+                  ),
+                );
               },
             ),
             RoundedButton(
               text: "SIGN UP",
               press: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) {
-                //       return Signup()();
-                //     },
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return Signup();
+                    },
+                  ),
+                );
               },
               color: kPrimaryLightColor,
               textColor: Colors.black,
-            )
+            ),
           ],
         ),
       ),
