@@ -41,8 +41,6 @@ class FeedScreen extends StatelessWidget {
   }
 
   Widget _feedListBuild(BuildContext context, int index) {
-    return Post(
-      index: index,
-    );
+    return Post(index);
   }
 }
