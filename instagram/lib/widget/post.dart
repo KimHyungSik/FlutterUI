@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/constants/commom_size.dart';
+import 'package:instagram/widget/comment.dart';
 import 'package:instagram/widget/rounded_avatar.dart';
 
 import 'my_progress_indicator.dart';
@@ -90,8 +91,41 @@ class Post extends StatelessWidget {
         ),
       ],
     );
+
+    var _postLikes = const Padding(
+      padding: EdgeInsets.only(left: common_gap),
+      child: Text(
+        '12000 likes',
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+
+    Widget _postCpation() {
+      return const Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: common_gap,
+          vertical: common_xxs_gap,
+        ),
+        child: Comment(
+          showImage: false,
+          username: 'useraname111',
+          text: 'I love myself!!',
+          dateTime: null,
+        ),
+      );
+    }
+
     return Column(
-      children: [_postHeader(), _postImage, _postActions],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _postHeader(),
+        _postImage,
+        _postActions,
+        _postLikes,
+        _postCpation()
+      ],
     );
   }
 }
