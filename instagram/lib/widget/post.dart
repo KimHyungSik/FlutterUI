@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram/constants/commom_size.dart';
+import 'package:instagram/widget/rounded_avatar.dart';
 
 import 'my_progress_indicator.dart';
 
@@ -39,19 +40,13 @@ class Post extends StatelessWidget {
 
     Widget _postHeader() {
       return Row(
-        children: <Widget>[
+        children: const <Widget>[
           Padding(
-            padding: const EdgeInsets.all(common_xxs_gap),
-            child: ClipOval(
-              child: CachedNetworkImage(
-                imageUrl: 'https://picsum.photos/100',
-                width: avatar_size,
-                height: avatar_size,
-              ),
-            ),
+            padding: EdgeInsets.all(common_xxs_gap),
+            child: RoundedAvatar(),
           ),
-          const Expanded(child: Text('username')),
-          const IconButton(
+          Expanded(child: Text('username')),
+          IconButton(
             onPressed: null,
             icon: Icon(
               Icons.more_horiz,
@@ -62,11 +57,41 @@ class Post extends StatelessWidget {
       );
     }
 
-    return Column(
-      children: [
-        _postHeader(),
-        _postImage,
+    var _postActions = Row(
+      children: const [
+        IconButton(
+          onPressed: null,
+          icon: ImageIcon(
+            AssetImage('assets/images/heart_selected.png'),
+            color: Colors.black87,
+          ),
+        ),
+        IconButton(
+          onPressed: null,
+          icon: ImageIcon(
+            AssetImage('assets/images/comment.png'),
+            color: Colors.black87,
+          ),
+        ),
+        IconButton(
+          onPressed: null,
+          icon: ImageIcon(
+            AssetImage('assets/images/direct_message.png'),
+            color: Colors.black87,
+          ),
+        ),
+        Spacer(),
+        IconButton(
+          onPressed: null,
+          icon: ImageIcon(
+            AssetImage('assets/images/bookmark.png'),
+            color: Colors.black87,
+          ),
+        ),
       ],
+    );
+    return Column(
+      children: [_postHeader(), _postImage, _postActions],
     );
   }
 }
