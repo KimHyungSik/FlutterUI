@@ -11,6 +11,8 @@ class MyProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: containerSize,
+      height: containerSize,
       child: SizedBox(
         height: progressSize,
         width: progressSize,
