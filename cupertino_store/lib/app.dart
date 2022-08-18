@@ -1,3 +1,6 @@
+import 'package:cupertino_store/product_list_tab.dart';
+import 'package:cupertino_store/search_tab.dart';
+import 'package:cupertino_store/shopping_cart_tab.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -66,64 +69,6 @@ class CupertinoStoreHomePage extends StatelessWidget {
         }
         return returnValue;
       },
-    );
-  }
-}
-
-class ShoppingCartTab extends StatelessWidget {
-  const ShoppingCartTab({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Consumer(
-      builder: (context, value, child) {
-        return const CustomScrollView(
-          slivers: <Widget>[
-            CupertinoSliverNavigationBar(
-              largeTitle: Text('Cupertino Store'),
-            )
-          ],
-        );
-      },
-    );
-  }
-}
-
-class SearchTab extends StatefulWidget {
-  const SearchTab({Key? key}) : super(key: key);
-
-  @override
-  State<SearchTab> createState() => _SearchTabState();
-}
-
-class _SearchTabState extends State<SearchTab> {
-  @override
-  Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        CupertinoSliverNavigationBar(
-          largeTitle: Text('Search'),
-        )
-      ],
-    );
-  }
-}
-
-class ProductListTab extends StatefulWidget {
-  const ProductListTab({Key? key}) : super(key: key);
-
-  @override
-  State<ProductListTab> createState() => _ProductListTabState();
-}
-
-class _ProductListTabState extends State<ProductListTab> {
-  @override
-  Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        CupertinoSliverNavigationBar(
-          largeTitle: Text('Shopping Cart'),
-        )
-      ],
     );
   }
 }
